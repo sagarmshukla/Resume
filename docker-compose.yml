@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    build: 
+        context: .
+        dockerfile: Dockerfile.dev
+        
+    ports:
+      - "8080:3000"
+
+    working_dir: /app
+    
+    volumes: 
+        - /app/node_modules
+        - .:/app
+    
+    # Run Docker compose continues  
+    stdin_open: true
+    
+  tests:
+    build: 
+        context: .
+        dockerfile: Dockerfile.dev
+        
+    volumes: 
+        - /app/node_modules
+        - .:/app
+    
+    # Run Docker compose continues  
+    stdin_open: true    
+    
+    command: ["npm", "run", "test"]
