@@ -6,5 +6,3 @@ services:
 before_install:
     - docker build -t resume -f Dockerfile.dev . 
 
-#script:
-#    - docker run resume npm run test -- --coverage
