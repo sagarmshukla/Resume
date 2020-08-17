@@ -10,7 +10,7 @@ script:
 deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
-    app: "Dockre"
+    app: "Docker"
     env: "Docker-env"
     bucket_name: "elasticbeanstalk-us-east-1-192588716298"
     bucket_path: "docker"
